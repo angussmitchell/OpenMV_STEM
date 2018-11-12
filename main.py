@@ -16,12 +16,6 @@ f_y = (2.8 / 2.952) * 120 # find_apriltags defaults to this if not set
 c_x = 160 * 0.5 # find_apriltags defaults to this if not set (the image.w * 0.5)
 c_y = 120 * 0.5 # find_apriltags defaults to this if not set (the image.h * 0.5)
 
-#Plant ID's
-Murnong_id = 0
-Murnong_msg = "Murnong"
-KG_id = 1
-KG_msg = "Kangaroo Grass"
-
 
 def degrees(radians):
     return (180 * radians) / math.pi
@@ -33,11 +27,13 @@ while(True):
         img.draw_rectangle(tag.rect(), color = (255, 0, 0))
         img.draw_cross(tag.cx(), tag.cy(), color = (0, 255, 0))
         #Check for all April Tag types
-        if (tag.id() == Murnong_id)
+        if (tag.id() == 0)
         {
-                lcd.write(Murning_msg)
+                lcd.write("Murnong")
+        }
+        elif (tag.id() == 1)
+        {
+                lcd.write("Kangaroo \n\r Grass")
         }
 
-    lcd.display(img) # Take a picture and display the image.
-
-
+lcd.display(img) # Take a picture and display the image.
